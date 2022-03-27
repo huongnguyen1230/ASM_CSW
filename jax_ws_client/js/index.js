@@ -9,17 +9,19 @@ document.addEventListener('DOMContentLoaded', function () {
 				newContent += `
                 <tr>
                     <td>${data[i].name}</td>
-                    <td>${data[i].salary}</td>
+                    <td>${data[i].price}</td>
                     <td>${data[i].status}</td>
                     <td>
                         <a href="./form.html?id=${data[i].id}" class="btn-update">Update</a> 
+						<a href="#" title="${data[i].id}" class="btn-delete">Delete</a>
+						<a href="./form.html?id=${data[i].id}" class="btn-add">Add to cart</a>  
                     </td>
                 </tr>`;
 			}
 			tableBody.innerHTML = newContent;
 		}
 	};
-	xmlHttpRequest.open('get', 'http://localhost:8080/api/employees', false);
+	xmlHttpRequest.open('get', 'http://localhost:8080/api/products', false);
 	xmlHttpRequest.send();
 
 	document.body.addEventListener('click', function (event) {

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
 	var btnSubmit = document.getElementById('btn-submit');
-	var txtName = document.forms['add-form']['employee-name'];
-	var txtSalary = document.forms['add-form']['salary'];
+	var txtName = document.forms['add-form']['product-name'];
+	var txtPrice = document.forms['add-form']['price'];
 	var txtStatus = document.forms['add-form']['status'];
 
 	var url_string = window.location.href.toLowerCase();
@@ -15,13 +15,13 @@ document.addEventListener('DOMContentLoaded', function () {
 			if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
 				var data = JSON.parse(xmlHttpRequest.responseText);
 				txtName.value = data.name;
-				txtSalary.value = data.salary;
+				txtPrice.value = data.price;
 				txtStatus.value = data.status;
 			}
 		};
 		xmlHttpRequest.open(
 			'get',
-			'http://localhost:8080/api/employees/' + id,
+			'http://localhost:8080/api/products/' + id,
 			false
 		);
 		xmlHttpRequest.send();
@@ -29,17 +29,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	btnSubmit.onclick = function () {
 		var name = txtName.value;
-		var salary = txtSalary.value;
+		var price = txtPrice.value;
 		var status = txtStatus.value;
 
 		var dataToSend = {
 			name: name,
-			salary: salary,
+			price: price,
 			status: status,
 		};
 
 		var method = 'post';
-		var url = 'http://localhost:8080/api/employees';
+		var url = 'http://localhost:8080/api/products';
 		var successStatus = 201;
 		if (isEdit) {
 			method = 'put';
