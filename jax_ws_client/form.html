@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/w3-css/4.1.0/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <form name="add-form" action="/action_page.php"
+        class="w3-container w3-card-4 w3-light-grey w3-text-purple w3-margin">
+        <h2 class="w3-center">Employee Form</h2>
+        <a href="index.html"><h6 class="w3-text-purple"><b>BACK</b></h6></a>
+        <div class="w3-container" id="create">
+            <div style="margin-top:70px">
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px; color: purple">Name</div>
+                    <div class="w3-rest" style="margin-left: 100px">
+                        <input class="w3-input w3-border" name="employee-name" type="text" placeholder="Enter employee name">
+                    </div>
+                </div>
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px; color: purple">Salary</div>
+                    <div class="w3-rest" style="margin-left: 100px">
+                        <input class="w3-input w3-border" name="salary"  type="text" placeholder="Enter salary">
+                    </div>
+                </div>
+                <div class="w3-row w3-section">
+                    <div class="w3-col" style="width:50px; color: purple">Status</div>
+                    <div class="w3-rest" style="margin-left: 100px">
+                        <input class="w3-input w3-border" name="status"  type="text" placeholder="Enter status">
+                    </div>
+                </div>
+                <button type="button" name="btn-submit" id="btn-submit" class="w3-button w3-block w3-padding-large w3-purple w3-margin-bottom">Submit</button>
+            </div>
+        </div>
+    </form>
+    <script src="./js/form.js"></script>
+</body>
+</html>
